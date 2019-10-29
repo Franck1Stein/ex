@@ -1,3 +1,4 @@
+
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
   <!-- Left navbar links -->
@@ -34,9 +35,9 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="index3.html" class="brand-link">
-    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+    <img src="{{ asset('design/adminlte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
          style="opacity: .8">
-    <span class="brand-text font-weight-light">AdminLTE 3</span>
+    <span class="brand-text font-weight-light">Admin</span>
   </a>
 
   <!-- Sidebar -->
@@ -44,10 +45,10 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
-        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        <img src="{{ asset('design/adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Alexander Pierce</a>
+        <a href="#" class="d-block">Komla Stein</a>
       </div>
     </div>
 
@@ -66,16 +67,21 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./index.html" class="nav-link active">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Dashboard v1</p>
+              <a href="#" class="nav-link ">
+                <i class="far fa-user nav-icon"></i>
+                <p>Profile</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="./index2.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Dashboard v2</p>
+              <a class="nav-link" href="{{ asset('admin/logout') }}"
+                  onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                  <i class="nav-icon fa fa-power-off"></i>
+                  <p>Logout</p>
               </a>
+              <form id="logout-form" action="{{ asset('admin/logout') }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+              </form>
             </li>
             <li class="nav-item">
               <a href="./index3.html" class="nav-link">
@@ -299,7 +305,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="pages/gallery.html" class="nav-link">
+          <a href="{{ asset('design/adminlte/pages/gallery.html') }}" class="nav-link">
             <i class="nav-icon far fa-image"></i>
             <p>
               Gallery
@@ -316,19 +322,19 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="pages/mailbox/mailbox.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/mailbox/mailbox.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Inbox</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/mailbox/compose.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/mailbox/compose.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Compose</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/mailbox/read-mail.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/mailbox/read-mail.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Read</p>
               </a>
@@ -345,49 +351,49 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="pages/examples/invoice.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/invoice.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Invoice</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/profile.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/profile.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Profile</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/e_commerce.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/e_commerce.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>E-commerce</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/projects.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/projects.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Projects</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/project_add.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/project_add.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Project Add</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/project_edit.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/project_edit.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Project Edit</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/project_detail.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/project_detail.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Project Detail</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/contacts.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/contacts.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Contacts</p>
               </a>
@@ -404,49 +410,49 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="pages/examples/login.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/login.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Login</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/register.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/register.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Register</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/lockscreen.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/lockscreen.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Lockscreen</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/legacy-user-menu.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/legacy-user-menu.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Legacy User Menu</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/language-menu.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/language-menu.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Language Menu</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/404.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/404.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Error 404</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/500.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/500.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Error 500</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/blank.html" class="nav-link">
+              <a href="{{ asset('design/adminlte/pages/examples/blank.html') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Blank Page</p>
               </a>
