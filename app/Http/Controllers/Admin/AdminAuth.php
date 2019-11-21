@@ -66,7 +66,7 @@ class AdminAuth extends Controller
 
     public function reset_password_final($token) {
 
-      $this->validate(request(), [
+      $this -> validate(request(), [
 
                                     'password' => 'required|confirmed',
                        'password_confirmation' => 'required',
