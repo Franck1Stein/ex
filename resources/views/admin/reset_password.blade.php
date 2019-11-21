@@ -27,46 +27,81 @@
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
+
         <p class="login-box-msg">{{ trans('admin.forgot_password') }}</p>
+
         @if(session()->has('success'))
+
           <div class="alert alert-success">
+
             <h1>{{ session('success') }}</h1>
+
           </div>
+
         @endif
 
         @if($errors->all())
+
           <div class="alert alert-danger">
+
             @foreach($errors->all() as $error)
+
               <li>{{ $error }}</li>
+
             @endforeach
+
           </div>
+
         @endif
+
         <form method="post">
+
           {{ csrf_field() }}
+
           <div class="input-group mb-3">
+
             <input type="email" name="email" value="{{ $data->email }}" class="form-control" placeholder="Email">
+
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
               </div>
             </div>
+
           </div>
+
           <div class="input-group mb-3">
+
             <input type="password" name="password" class="form-control" placeholder="Password">
+
             <div class="input-group-append">
+
               <div class="input-group-text">
+
                 <span class="fas fa-lock"></span>
+
               </div>
+
             </div>
+
           </div>
+
           <div class="input-group mb-3">
+
             <input type="password" name="password_confirmation" class="form-control" placeholder="Enter Confirmation Password">
+
             <div class="input-group-append">
+
               <div class="input-group-text">
+
                 <span class="fas fa-lock"></span>
+
               </div>
+
             </div>
+
           </div>
+
           <div class="row">
             <!-- /.col -->
             <div class="col-4">
@@ -74,6 +109,7 @@
             </div>
             <!-- /.col -->
           </div>
+          
         </form>
         <!-- /.social-auth-links -->
 

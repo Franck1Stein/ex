@@ -48,7 +48,7 @@
         <img src="{{ asset('design/adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Komla Stein</a>
+        <a href="#" class="d-block">{{ admin()->user()->name }}</a>
       </div>
     </div>
 

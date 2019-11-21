@@ -28,11 +28,15 @@
     <div class="card">
       <div class="card-body login-card-body">
         <p class="login-box-msg">{{ trans('admin.forgot_password') }}</p>
-        @if(session()->has('success'))
+
+        @if( session()->has('success') )
+
           <div class="alert alert-success">
             <h1>{{ session('success') }}</h1>
           </div>
+
         @endif
+
         <form method="post">
           {{ csrf_field() }}
           <div class="input-group mb-3">
